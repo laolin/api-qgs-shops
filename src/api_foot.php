@@ -25,7 +25,7 @@ class class_foot{
           $w_or["or#".$i]=[ 'tel[~]'=>$k[$i], 'addr[~]'=>$k[$i], 'name[~]'=>$k[$i] ];
         }
         $where=['and' => $w_or, "LIMIT" => 100 ];
-        var_dump($where);
+        //var_dump($where);
       }
       //id	dpid	name	region	region_name	addr	tel	stars	star_count	scores	score_count	lnglat	mark1	mark2
       $r=$db->select('dp01_shop_v3',
