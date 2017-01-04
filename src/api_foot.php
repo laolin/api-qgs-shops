@@ -29,7 +29,7 @@ class class_foot{
       }
       //id	dpid	name	region	region_name	addr	tel	stars	star_count	scores	score_count	lnglat	mark1	mark2
       $r=$db->select('dp01_shop_v3',
-          ['id','dpid','name','region_name','addr','tel','stars','star_count','scores','score_count','lnglat' ],
+          ['id','name','region_name','addr','tel','stars','star_count','scores','score_count','lnglat' ],
           $where);
       $res['data']=$r;
       return $res;
