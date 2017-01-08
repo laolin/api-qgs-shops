@@ -39,7 +39,10 @@ class class_foot{
         $tik++;
         $andArray["and#t$tik"]=$w_or;
       }
-      $where=['and' => $andArray , "LIMIT" => 100 ] ;
+      if(count($andArray))
+        $where=['and' => $andArray , "LIMIT" => 100 ] ;
+      else
+        $where=["LIMIT" => 100 ] ;
       //var_dump($where);
 
 /*
