@@ -59,8 +59,8 @@ UPDATE dp01_shop_v3 set lng = 10000000 * SUBSTRING_INDEX (lnglat,',',1)
 
 */
       //id	dpid	name	region	region_name	addr	tel	stars	star_count	scores	score_count	lnglat	mark1	mark2
-      $r=$db->select('dp01_shop_v3',
-          ['id','name','region_name','addr','tel','stars','star_count','scores','score_count','lnglat' ],
+      $r=$db->select('dp02_shop_v5', // database updated, so change the tbl name
+          ['id','name','region_name','addr','tel','star_count','scores','score_count','lnglat' ],
           $where);
       //var_dump($db);
       $res['data']=$r;
