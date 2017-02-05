@@ -13,6 +13,9 @@ class class_foot{
     
 
     public static function search( $para1,$para2) {
+      if( !USER::userVerify( )) {
+        return API::msg(2001,'Error verify token.');
+      }
       $res=API::msg(0,'Ok.');
       $db=API::db();
       $keys=API::GET('s');
