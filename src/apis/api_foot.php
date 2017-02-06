@@ -19,6 +19,9 @@ class class_foot{
       $res=API::msg(0,'Ok.');
       $db=API::db();
       $keys=API::GET('s');
+      $count=intval(API::GET('count'));
+      if($count<5)$count=5;
+      if($count>500)$count=500;
       $latlng=explode(',',API::GET('latlng'));
       $tik=0;
       $andArray=[];
@@ -42,7 +45,7 @@ class class_foot{
         $tik++;
         $andArray["and#t$tik"]=$w_or;
       }
-      $where=["LIMIT" => 100 , "ORDER" => ["star_count DESC", "star_5 DESC"]] ;
+      $where=["LIMIT" => $count , "ORDER" => ["star_count DESC", "star_5 DESC"]] ;
       if(count($andArray))
         $where['and'] = $andArray ;
       //var_dump($where);
